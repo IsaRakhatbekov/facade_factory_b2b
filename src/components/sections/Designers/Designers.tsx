@@ -1,4 +1,4 @@
-import DesignersImg from '@/public/images/DesignersImg.png'
+import DesignersImg from '@/public/images/DesignersImg.webp'
 import Image from 'next/image'
 import styles from './Designers.module.scss'
 

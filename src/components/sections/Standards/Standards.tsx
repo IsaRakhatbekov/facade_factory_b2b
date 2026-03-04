@@ -1,4 +1,4 @@
-import StandardsImg from '@/public/images/StandardsImg.png'
+import StandardsImg from '@/public/images/StandardsImg.webp'
 import Image from 'next/image'
 import styles from './Standards.module.scss'
 

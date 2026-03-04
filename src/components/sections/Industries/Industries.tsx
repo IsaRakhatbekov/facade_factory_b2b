@@ -1,4 +1,4 @@
-import IndustriesImg from '@/public/images/IndustriesImg.png'
+import IndustriesImg from '@/public/images/IndustriesImg.webp'
 import Image from 'next/image'
 import styles from './Industries.module.scss'
 

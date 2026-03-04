@@ -1,4 +1,4 @@
-import solutionsImg from '@/public/images/SolutionsImg.png'
+import solutionsImg from '@/public/images/SolutionsImg.webp'
 import Image from 'next/image'
 import styles from './ProblemsSolutions.module.scss'
 
