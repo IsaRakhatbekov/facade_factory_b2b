@@ -7,7 +7,7 @@
 	.title {
 		font-family: $benzin;
 		font-weight: 500;
-		font-size: 44px;
+		font-size: clamp(24px, 4vw, 44px);
 		letter-spacing: 0.01em;
 		text-align: center;
 		color: $white;
@@ -17,7 +17,7 @@
 	.text {
 		font-family: $manrope;
 		font-weight: 400;
-		font-size: 24px;
+		font-size: clamp(16px, 2vw, 26px);
 		text-align: center;
 		color: $white;
 		line-height: 1.3em;
@@ -27,6 +27,7 @@
 
 	.btn {
 		display: inline-block;
+		width: fit-content;
 		max-width: 400px;
 		border: 2px solid $orange;
 		border-radius: 30px;
@@ -36,12 +37,25 @@
 
 		font-family: $manrope;
 		font-weight: 500;
-		font-size: 20px;
+		font-size: clamp(16px, 2vw, 20px);
 		color: $orange;
 		text-align: center;
 		margin: 0 auto;
 		display: block;
 		text-decoration: none;
 		cursor: pointer;
+	}
+}
+
+@media (max-width: 500px) {
+	.Hero {
+		.title {
+			text-align: left;
+		}
+		.text {
+			text-align: left;
+			max-width: 100%;
+			line-height: 1.7em;
+		}
 	}
 }

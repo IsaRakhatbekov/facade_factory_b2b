@@ -11,6 +11,7 @@
 	background-color: $gray;
 	transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 	will-change: transform;
+	padding: 20px;
 
 	&.closed {
 		transform: translateY(-100%);
@@ -20,7 +21,8 @@
 .subtitle {
 	font-family: $benzin;
 	font-weight: 400;
-	font-size: 110px;
+	// font-size: 110px;
+	font-size: clamp(40px, 10vw, 110px);
 	line-height: 99%;
 	letter-spacing: 0em;
 	text-align: center;
@@ -36,13 +38,15 @@
 .buttons {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap-reverse;
+	justify-content: center;
 	gap: 20px;
 }
 
 .btn {
 	font-family: $manrope;
 	font-weight: 500;
-	font-size: 24px;
+	font-size: clamp(16px, 2vw, 24px);
 	color: $gray;
 	padding: 14px 32px;
 	border-radius: 30px;
