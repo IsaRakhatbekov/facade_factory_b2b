@@ -7,7 +7,7 @@ const ProblemsSolutions = () => {
 		<section id='about' className={styles.ProblemsSolutions}>
 			<div className={`${styles.container} container`}>
 				<div className={styles.Problems}>
-					<h2 className={styles.title}>
+					<h2 className={`${styles.title} def-title`}>
 						Мы знаем, с какими проблемами вы сталкиваетесь
 					</h2>
 					<ul className={styles.list}>
@@ -145,7 +145,9 @@ const ProblemsSolutions = () => {
 				</div>
 
 				<div className={styles.Solutions}>
-					<h2 className={styles.title}>У нас это решено на уровне процессов</h2>
+					<h2 className={`${styles.title} def-title`}>
+						У нас это решено на уровне процессов
+					</h2>
 					<div className={styles.wrapper}>
 						<div className={styles.imgWrapper}>
 							<Image src={solutionsImg} alt='Solutions' />

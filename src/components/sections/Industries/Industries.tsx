@@ -16,26 +16,28 @@ const Industries = () => {
 					</p>
 				</div>
 
-				<ul className={styles.list}>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>Стабильные партии</p>
-					</li>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>Понятные расчёты</p>
-					</li>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>Удобная логистика заказов</p>
-					</li>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>Долгосрочное сотрудничество</p>
-					</li>
-				</ul>
-				<div className={styles.imgWrapper}>
-					<Image src={IndustriesImg} alt='Industries' />
+				<div className={styles.wrapper}>
+					<ul className={styles.list}>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>Стабильные партии</p>
+						</li>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>Понятные расчёты</p>
+						</li>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>Удобная логистика заказов</p>
+						</li>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>Долгосрочное сотрудничество</p>
+						</li>
+					</ul>
+					<div className={styles.imgWrapper}>
+						<Image src={IndustriesImg} alt='Industries' />
+					</div>
 				</div>
 				<a href='#form' className={styles.btn}>
 					Запросить прайс и условия

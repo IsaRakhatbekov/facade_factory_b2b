@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as *;
+
 .ProblemsSolutions {
 	background-color: #eee;
 	padding: 80px 0;
@@ -13,10 +14,6 @@
 		margin-bottom: 100px;
 
 		.title {
-			font-family: $benzin;
-			font-weight: 400;
-			font-size: 48px;
-			letter-spacing: 0.01em;
 			color: $gray;
 			margin-bottom: 80px;
 		}
@@ -25,6 +22,12 @@
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 40px;
+		}
+
+		.item {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
 		}
 
 		.text {
@@ -38,10 +41,6 @@
 	// ----------------------------------------------------
 	.Solutions {
 		.title {
-			font-family: $benzin;
-			font-weight: 500;
-			font-size: 48px;
-			letter-spacing: 0.01em;
 			color: $gray;
 			margin-bottom: 40px;
 		}
@@ -54,6 +53,9 @@
 		}
 
 		.imgWrapper {
+			position: relative;
+			width: 100%;
+			max-width: 588px;
 			border-radius: 20px;
 			aspect-ratio: 588 / 424;
 			overflow: hidden;
@@ -133,10 +135,13 @@
 		}
 
 		.textWrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
 			& h3 {
 				font-family: $benzin;
 				font-weight: 400;
-				font-size: 22px;
+				font-size: clamp(16px, 2vw, 22px);
 				letter-spacing: 0.02em;
 				color: #000;
 			}
@@ -147,6 +152,132 @@
 				font-size: 14px;
 				letter-spacing: 0.03em;
 				color: $gray;
+			}
+		}
+	}
+}
+
+// ----------------------------------------------------
+@media (max-width: 991px) {
+	.ProblemsSolutions {
+		.Problems {
+			padding: 40px 20px;
+
+			.title {
+				margin-bottom: 60px;
+			}
+		}
+
+		.Solutions {
+			.content,
+			.item {
+				gap: 10px;
+			}
+			.block {
+				gap: 10px;
+			}
+		}
+	}
+}
+
+@media (max-width: 920px) {
+	.ProblemsSolutions {
+		.Solutions {
+			.wrapper {
+				flex-direction: column-reverse;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.ProblemsSolutions {
+		border-radius: 50px;
+		padding: 40px 0;
+
+		.Problems {
+			margin-bottom: 80px;
+			.title {
+				margin-bottom: 40px;
+			}
+
+			.list {
+				gap: 20px;
+			}
+
+			.item {
+				gap: 15px;
+			}
+		}
+	}
+}
+
+@media (max-width: 570px) {
+	.ProblemsSolutions {
+		border-radius: 20px;
+
+		.Problems {
+			border-radius: 16px;
+
+			.list {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+
+		.Solutions {
+			.content {
+				max-width: 100%;
+			}
+
+			.item {
+				gap: 20px;
+				max-width: 100%;
+				flex-direction: column;
+			}
+
+			.block {
+				width: 100%;
+				gap: 20px;
+				justify-content: flex-start;
+			}
+			.block1 {
+				max-width: 100%;
+				height: fit-content;
+			}
+			.block2 {
+				max-width: 100%;
+				height: fit-content;
+			}
+			.block3 {
+				max-width: 100%;
+				height: fit-content;
+			}
+			.block4 {
+				max-width: 100%;
+				height: fit-content;
+			}
+			.block5 {
+				max-width: 100%;
+				height: fit-content;
+			}
+			.block6 {
+				display: inline-block;
+				max-width: fit-content;
+				align-self: flex-start;
+				height: fit-content;
+				border-radius: 30px;
+				padding: 10px 20px;
+				font-weight: 700;
+				font-size: 18px;
+			}
+
+			.imgWrapper {
+				position: relative;
+				width: 100%;
+				max-width: 100%;
+				height: 200px;
+				aspect-ratio: auto;
+				border-radius: 20px;
 			}
 		}
 	}
