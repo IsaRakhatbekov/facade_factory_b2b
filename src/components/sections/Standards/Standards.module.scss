@@ -30,11 +30,6 @@
 
 	.title {
 		flex-shrink: 0;
-
-		font-family: $benzin;
-		font-weight: 400;
-		font-size: 48px;
-		letter-spacing: 0.01em;
 		color: $gray;
 	}
 
@@ -43,7 +38,7 @@
 		align-self: flex-end;
 		font-family: $manrope;
 		font-weight: 400;
-		font-size: 22px;
+		font-size: clamp(16px, 2vw, 22px);
 		letter-spacing: 0.02em;
 		color: $gray;
 	}
@@ -61,7 +56,7 @@
 
 		font-family: $manrope;
 		font-weight: 400;
-		font-size: 24px;
+		font-size: clamp(18px, 2vw, 24px);
 		text-transform: uppercase;
 		color: $gray;
 
@@ -74,6 +69,73 @@
 			height: 8px;
 			border-radius: 100%;
 			background-color: $orange;
+		}
+	}
+
+	.imgWrapper {
+		border-radius: 20px;
+		aspect-ratio: 1216 / 177;
+		overflow: hidden;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.Standards {
+		padding: 40px 0;
+		.titleWrapper {
+			margin-bottom: 60px;
+		}
+		.titleLine {
+			height: 4px;
+		}
+
+		.list {
+			gap: 20px;
+		}
+	}
+}
+
+@media (max-width: 559px) {
+	.Standards {
+		.item {
+			& h3 {
+				padding-top: 0;
+				padding-left: 30px;
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: 9px;
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.Standards {
+		.titleWrapper {
+			margin-bottom: 40px;
+		}
+
+		.titleLine {
+			display: none;
+		}
+
+		.title {
+			flex-shrink: 1;
+		}
+
+		.imgWrapper {
+			border-radius: 20px;
+			aspect-ratio: 343 / 77;
 		}
 	}
 }

@@ -9,7 +9,9 @@ const Standards = () => {
 				<div className={styles.titleWrapper}>
 					<div className={styles.titleInner}>
 						<div className={styles.titleLine}></div>
-						<h2 className={styles.title}>Работаем по стандартам</h2>
+						<h2 className={`${styles.title} def-title`}>
+							Работаем по стандартам
+						</h2>
 					</div>
 					<p className={styles.subtitle}>
 						Мы привыкли работать с документацией и понимаем, что в B2B нет
