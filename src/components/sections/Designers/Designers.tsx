@@ -16,27 +16,32 @@ const Designers = () => {
 					</p>
 				</div>
 
-				<ul className={styles.list}>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>Эксклюзивная фрезеровка</p>
-					</li>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>точное попадание в цвет</p>
-					</li>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>реализация идей «как в визуализации»</p>
-					</li>
-					<li className={styles.item}>
-						<div className={styles.circle}></div>
-						<p className={styles.text}>сопровождение проекта</p>
-					</li>
-				</ul>
-				<div className={styles.imgWrapper}>
-					<Image src={DesignersImg} alt='Industries' />
+				<div className={styles.wrapper}>
+					<ul className={styles.list}>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>Эксклюзивная фрезеровка</p>
+						</li>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>точное попадание в цвет</p>
+						</li>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>
+								реализация идей «как в визуализации»
+							</p>
+						</li>
+						<li className={styles.item}>
+							<div className={styles.circle}></div>
+							<p className={styles.text}>сопровождение проекта</p>
+						</li>
+					</ul>
+					<div className={styles.imgWrapper}>
+						<Image src={DesignersImg} alt='Industries' />
+					</div>
 				</div>
+
 				<a href='#form' className={styles.btn}>
 					Обсудить проект
 				</a>

@@ -1,6 +1,7 @@
 import Footer from '@/src/components/Footer/Footer'
 import Header from '@/src/components/Header/Header'
 import IntroOverlay from '@/src/components/IntroOverlay/IntroOverlay'
+import Designers from '../components/sections/Designers/Designers'
 import Hero from '../components/sections/Hero/Hero'
 import Industries from '../components/sections/Industries/Industries'
 import ProblemsSolutions from '../components/sections/ProblemsSolutions/ProblemsSolutions'
@@ -14,7 +15,7 @@ export default function Home() {
 				<Hero />
 				<ProblemsSolutions />
 				<Industries />
-				{/* <Designers /> */}
+				<Designers />
 				{/* <Standards /> */}
 				{/* <Form /> */}
 			</main>

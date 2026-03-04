@@ -10,18 +10,10 @@
 		margin-bottom: 40px;
 	}
 
-	.title {
-		font-family: $benzin;
-		font-weight: 400;
-		font-size: 48px;
-		letter-spacing: 0.01em;
-		color: $white;
-	}
-
 	.subtitle {
 		font-family: $manrope;
 		font-weight: 400;
-		font-size: 22px;
+		font-size: clamp(16px, 2vw, 22px);
 		color: rgba(255, 255, 255, 0.8);
 	}
 
@@ -52,7 +44,7 @@
 	.text {
 		font-family: $manrope;
 		font-weight: 500;
-		font-size: 18px;
+		font-size: clamp(14px, 2vw, 18px);
 		text-transform: uppercase;
 		text-align: center;
 		color: $white;
@@ -73,18 +65,74 @@
 
 	.btn {
 		display: inline-block;
-		max-width: 238px;
+		max-width: fit-content;
 		font-family: $manrope;
 		display: block;
 		margin: 0 auto;
 		border-radius: 30px;
 		padding: 10px 20px;
 		color: $gray;
+		text-align: center;
 		background-color: $orange;
 
 		font-weight: 500;
-		font-size: 24px;
+		font-size: clamp(16px, 2vw, 24px);
 		text-decoration: none;
 		cursor: pointer;
+	}
+}
+
+@media (max-width: 768px) {
+	.Designers {
+		.titleWrapper {
+			flex-direction: column;
+			text-align: center;
+			gap: 5px;
+		}
+
+		.title {
+			text-align: center;
+		}
+
+		.subtitle {
+			max-width: 490px;
+		}
+
+		.wrapper {
+			display: flex;
+			justify-content: center;
+			gap: 40px;
+		}
+
+		.list {
+			max-width: 50%;
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.imgWrapper {
+			border-radius: 20px;
+			aspect-ratio: 343 / 400;
+			overflow: hidden;
+			margin-bottom: 40px;
+			max-width: 50%;
+
+			& img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+@media (max-width: 500px) {
+	.Designers {
+		.imgWrapper {
+			display: none;
+		}
+
+		.item,
+		.list {
+			max-width: 100%;
+		}
 	}
 }
