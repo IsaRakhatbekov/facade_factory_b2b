@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	list-style: none;
+	text-decoration: none;
+}
+
+a {
+	outline: none;
+	color: inherit;
+	text-decoration: none;
+	font-family: inherit;
+}
+
+button {
+	color: inherit;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+
+input,
+textarea {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+
+/* Отступ при скролле к секциям — фиксированный хедер (~90px) */
+[id] {
+	scroll-margin-top: 90px;
+}

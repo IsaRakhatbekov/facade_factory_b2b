@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+:root {
+	/* CSS custom properties for colors (fallback if needed) */
+	--color-white: #fff;
+	--color-gray: #1f1f1f;
+	--color-orange: #ff9934;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $manrope;
+	color: $white;
+	background: $gray;
+	min-height: 100vh;
+}
+
+.page-layout {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	main {
+		flex: 1;
+	}
+}
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1245px;
+}
+
+.def-title {
+	font-family: $benzin;
+	font-weight: 400;
+	font-size: clamp(24px, 4vw, 48px);
+	letter-spacing: 0.01em;
+	color: $white;
+}

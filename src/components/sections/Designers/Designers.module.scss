@@ -1,0 +1,90 @@
+@use '../../../styles/variables' as *;
+.Designers {
+	padding: 80px 0;
+
+	.titleWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		margin-bottom: 40px;
+	}
+
+	.title {
+		font-family: $benzin;
+		font-weight: 400;
+		font-size: 48px;
+		letter-spacing: 0.01em;
+		color: $white;
+	}
+
+	.subtitle {
+		font-family: $manrope;
+		font-weight: 400;
+		font-size: 22px;
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+		margin-bottom: 40px;
+	}
+
+	.item {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 25px;
+		width: 100%;
+		max-width: 274px;
+		margin: 0 auto;
+	}
+
+	.circle {
+		width: 30px;
+		height: 30px;
+		border-radius: 100%;
+		background-color: $orange;
+	}
+
+	.text {
+		font-family: $manrope;
+		font-weight: 500;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-align: center;
+		color: $white;
+	}
+
+	.imgWrapper {
+		border-radius: 20px;
+		aspect-ratio: 1216 / 418;
+		overflow: hidden;
+		margin-bottom: 40px;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.btn {
+		display: inline-block;
+		max-width: 238px;
+		font-family: $manrope;
+		display: block;
+		margin: 0 auto;
+		border-radius: 30px;
+		padding: 10px 20px;
+		color: $gray;
+		background-color: $orange;
+
+		font-weight: 500;
+		font-size: 24px;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}

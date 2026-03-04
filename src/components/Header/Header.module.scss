@@ -1,0 +1,233 @@
+@use '../../styles/variables' as *;
+
+.header {
+	padding: 30px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	background: transparent;
+	transition: all 0.3s ease;
+
+	&.scrolled {
+		padding: 15px 0;
+		background-color: $gray;
+	}
+	.nav {
+		gap: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.logoWrapper {
+		display: block;
+		width: 150px;
+		height: 45px;
+		overflow: hidden;
+		text-decoration: none;
+		color: inherit;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	.list {
+		gap: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.link {
+		font-family: $arial;
+		font-weight: 400;
+		font-size: 14px;
+		color: $white;
+	}
+
+	.btn {
+		font-family: $manrope;
+		font-weight: 500;
+		font-size: 16px;
+		color: $gray;
+		padding: 10px 20px;
+		border-radius: 30px;
+		background: $orange;
+	}
+
+	.burger {
+		width: 44px;
+		height: 44px;
+		display: none;
+		align-items: center;
+		justify-content: center;
+
+		& span {
+			position: relative;
+			width: 20px;
+			height: 2px;
+			background-color: $white;
+
+			&::after {
+				content: '';
+				left: 0;
+				position: absolute;
+				width: 20px;
+				height: 2px;
+				background-color: $white;
+				transform: translateY(6px);
+				border-radius: 2px;
+				transition: transform 0.3s ease-in-out;
+			}
+
+			&::before {
+				content: '';
+				left: 0;
+				position: absolute;
+				width: 20px;
+				height: 2px;
+				background-color: $white;
+				transform: translateY(-6px);
+				border-radius: 2px;
+				transition: transform 0.3s ease-in-out;
+			}
+
+			&.open {
+				background-color: transparent;
+			}
+
+			&.open::before {
+				transform: rotate(-45deg);
+			}
+
+			&.open::after {
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	.burgerMenu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh; /* или 100dvh для лучшей поддержки мобильных */
+		background-color: $gray;
+		z-index: -1; /* выше хедера */
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start; /* вместо center */
+		transform: translateY(-100%);
+		transition: transform 0.3s ease-in-out;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
+
+		/* Отступ сверху, чтобы контент не скрывался за хедером */
+		padding-top: 100px; /* подберите точное значение под ваш хедер */
+		padding-bottom: 40px;
+
+		&.open {
+			transform: translateY(0);
+		}
+
+		.burgerList {
+			display: flex;
+			flex-direction: column;
+			align-items: center; /* центрирование по горизонтали */
+			width: 100%;
+			/* убираем justify-content: center */
+
+			.item {
+				width: 100%;
+			}
+
+			.link {
+				display: block;
+				width: 100%;
+				font-family: $arial;
+				font-weight: 400;
+				font-size: 18px;
+				text-align: center;
+				color: $white;
+				padding: 20px;
+			}
+		}
+
+		.burgerBtnsWrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		.burgerBtn {
+			font-family: $manrope;
+			font-weight: 500;
+			font-size: 16px;
+			color: $gray;
+			padding: 10px 20px;
+			border-radius: 30px;
+		}
+
+		.burgerBtnPrimary {
+			background: $orange;
+		}
+
+		.burgerBtnTransparent {
+			color: $orange;
+			border: 1px solid $orange;
+			background: rgba(255, 255, 255, 0.1);
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.header {
+		.logoWrapper {
+			width: 100px;
+			height: 35px;
+		}
+
+		.btn {
+			font-size: 14px;
+			padding: 8px 8px;
+			font-weight: 400;
+		}
+	}
+}
+
+@media (max-width: 1100px) {
+	.header {
+		.list {
+			gap: 10px;
+		}
+		.btn {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.header {
+		.logoWrapper {
+			width: 80px;
+			height: 25px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.header {
+		.list {
+			display: none;
+		}
+
+		.burger {
+			display: flex;
+		}
+	}
+}

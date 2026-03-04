@@ -1,0 +1,10 @@
+// Color variables (SCSS - compile to values)
+$white: #fff;
+$light-white: #eee;
+$gray: #1f1f1f;
+$orange: #ff9934;
+
+// Font variables (use CSS vars from Next.js, set on body)
+$manrope: var(--font-manrope), sans-serif;
+$benzin: var(--font-benzin), sans-serif;
+$arial: Arial, Helvetica, sans-serif;

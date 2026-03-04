@@ -1,0 +1,47 @@
+@use '../../../styles/variables' as *;
+.Hero {
+	padding: 160px 0 140px;
+	background: url('../../../../public/images/heroBg.png') no-repeat top/cover;
+	background-attachment: fixed;
+
+	.title {
+		font-family: $benzin;
+		font-weight: 500;
+		font-size: 44px;
+		letter-spacing: 0.01em;
+		text-align: center;
+		color: $white;
+		margin-bottom: 25px;
+	}
+
+	.text {
+		font-family: $manrope;
+		font-weight: 400;
+		font-size: 24px;
+		text-align: center;
+		color: $white;
+		line-height: 1.3em;
+		max-width: 700px;
+		margin: 0 auto 40px;
+	}
+
+	.btn {
+		display: inline-block;
+		max-width: 400px;
+		border: 2px solid $orange;
+		border-radius: 30px;
+		padding: 10px 20px;
+		color: $orange;
+		background: rgba(255, 255, 255, 0.1);
+
+		font-family: $manrope;
+		font-weight: 500;
+		font-size: 20px;
+		color: $orange;
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}

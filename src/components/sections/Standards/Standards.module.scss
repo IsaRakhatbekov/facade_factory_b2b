@@ -1,0 +1,79 @@
+@use '../../../styles/variables' as *;
+.Standards {
+	color: $gray;
+	background: #eee;
+	padding: 80px 0;
+
+	.titleWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin-bottom: 80px;
+	}
+
+	.titleInner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	.titleLine {
+		flex-shrink: 1;
+		display: inline-block;
+		width: 100%;
+		max-width: 100%;
+		height: 10px;
+		border-radius: 30px;
+		background: $gray;
+	}
+
+	.title {
+		flex-shrink: 0;
+
+		font-family: $benzin;
+		font-weight: 400;
+		font-size: 48px;
+		letter-spacing: 0.01em;
+		color: $gray;
+	}
+
+	.subtitle {
+		max-width: 800px;
+		align-self: flex-end;
+		font-family: $manrope;
+		font-weight: 400;
+		font-size: 22px;
+		letter-spacing: 0.02em;
+		color: $gray;
+	}
+
+	.list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+		gap: 40px;
+		margin-bottom: 40px;
+	}
+
+	.innerTitle {
+		position: relative;
+		padding-top: 30px;
+
+		font-family: $manrope;
+		font-weight: 400;
+		font-size: 24px;
+		text-transform: uppercase;
+		color: $gray;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 8px;
+			height: 8px;
+			border-radius: 100%;
+			background-color: $orange;
+		}
+	}
+}

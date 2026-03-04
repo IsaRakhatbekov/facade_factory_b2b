@@ -1,0 +1,153 @@
+@use '../../../styles/variables' as *;
+.ProblemsSolutions {
+	background-color: #eee;
+	padding: 80px 0;
+	border-radius: 100px;
+	color: $gray;
+
+	// ----------------------------------------------------
+	.Problems {
+		padding: 60px;
+		border: 1px solid $gray;
+		border-radius: 50px;
+		margin-bottom: 100px;
+
+		.title {
+			font-family: $benzin;
+			font-weight: 400;
+			font-size: 48px;
+			letter-spacing: 0.01em;
+			color: $gray;
+			margin-bottom: 80px;
+		}
+
+		.list {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 40px;
+		}
+
+		.text {
+			text-transform: uppercase;
+
+			& span {
+				color: rgba(31, 31, 31, 0.4);
+			}
+		}
+	}
+	// ----------------------------------------------------
+	.Solutions {
+		.title {
+			font-family: $benzin;
+			font-weight: 500;
+			font-size: 48px;
+			letter-spacing: 0.01em;
+			color: $gray;
+			margin-bottom: 40px;
+		}
+
+		.wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+		}
+
+		.imgWrapper {
+			border-radius: 20px;
+			aspect-ratio: 588 / 424;
+			overflow: hidden;
+		}
+
+		.content {
+			width: 100%;
+			max-width: 588px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		.item {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.block {
+			padding: 20px;
+			border-radius: 20px;
+			height: 150px;
+			background-color: $white;
+			display: flex;
+			justify-content: space-between;
+			gap: 22px;
+		}
+
+		.block1 {
+			max-width: 299px;
+			height: 148px;
+		}
+
+		.block2 {
+			max-width: 269px;
+			height: 148px;
+		}
+		.block3 {
+			max-width: 197px;
+			height: 118px;
+		}
+		.block4 {
+			max-width: 371px;
+			height: 118px;
+		}
+		.block5 {
+			max-width: 320px;
+			height: 118px;
+		}
+		.block6 {
+			display: block;
+			max-width: 248px;
+			height: 118px;
+			border-radius: 50px;
+			background-color: $orange;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			font-family: $manrope;
+			font-weight: 600;
+			font-size: 24px;
+			text-transform: uppercase;
+			text-align: center;
+			color: $gray;
+		}
+
+		.iconWrapper {
+			width: 24px;
+			height: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+
+		.textWrapper {
+			& h3 {
+				font-family: $benzin;
+				font-weight: 400;
+				font-size: 22px;
+				letter-spacing: 0.02em;
+				color: #000;
+			}
+
+			& p {
+				font-family: $manrope;
+				font-weight: 500;
+				font-size: 14px;
+				letter-spacing: 0.03em;
+				color: $gray;
+			}
+		}
+	}
+}
