@@ -48,6 +48,24 @@
 		font-weight: 400;
 		font-size: 14px;
 		color: $white;
+		position: relative;
+		display: inline-block;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			bottom: -4px;
+			width: 0;
+			height: 1px;
+			background: $white;
+			transform: translateX(-50%);
+			transition: width 0.3s ease;
+		}
+
+		&:hover::after {
+			width: 100%;
+		}
 	}
 
 	.btn {
@@ -58,6 +76,16 @@
 		padding: 10px 20px;
 		border-radius: 30px;
 		background: $orange;
+		border: 2px solid transparent;
+
+		transition: all 0.3s ease;
+		&:hover {
+			border: 2px solid $orange;
+			border-radius: 30px;
+			padding: 10px 20px;
+			color: $orange;
+			background: rgba(255, 255, 255, 0.1);
+		}
 	}
 
 	.burger {

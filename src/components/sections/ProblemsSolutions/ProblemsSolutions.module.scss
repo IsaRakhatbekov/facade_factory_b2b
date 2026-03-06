@@ -123,6 +123,13 @@
 			text-transform: uppercase;
 			text-align: center;
 			color: $gray;
+
+			transition: all 0.3s ease;
+
+			&:hover {
+				color: $white;
+				border-radius: 30px;
+			}
 		}
 
 		.iconWrapper {

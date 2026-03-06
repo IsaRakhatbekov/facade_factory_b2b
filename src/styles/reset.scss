@@ -37,6 +37,13 @@ textarea {
 	margin: 0;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+	-webkit-text-fill-color: inherit;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
 /* Отступ при скролле к секциям — фиксированный хедер (~90px) */
 [id] {
 	scroll-margin-top: 90px;
