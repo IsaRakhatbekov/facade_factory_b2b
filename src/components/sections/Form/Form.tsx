@@ -10,11 +10,20 @@ const PHONE_MIN_DIGITS = 10
 const PHONE_MAX_DIGITS = 12
 const MESSAGE_MAX_LENGTH = 500
 
+function validateCompany(value: string): string | null {
+	const trimmed = value.trim()
+	if (trimmed.length < NAME_MIN_LETTERS)
+		return `Минимум ${NAME_MIN_LETTERS} символа`
+	return null
+}
+
 function validateName(value: string): string | null {
 	const trimmed = value.trim()
-	if (trimmed.length < NAME_MIN_LETTERS) return `Минимум ${NAME_MIN_LETTERS} буквы`
+	if (trimmed.length < NAME_MIN_LETTERS)
+		return `Минимум ${NAME_MIN_LETTERS} буквы`
 	const letters = trimmed.replace(/[^а-яёa-z\s]/gi, '').replace(/\s/g, '')
-	if (letters.length < NAME_MIN_LETTERS) return `Минимум ${NAME_MIN_LETTERS} буквы`
+	if (letters.length < NAME_MIN_LETTERS)
+		return `Минимум ${NAME_MIN_LETTERS} буквы`
 	return null
 }
 
@@ -22,7 +31,8 @@ function validatePhone(value: string): string | null {
 	const digits = value.replace(/\D/g, '')
 	if (digits.length < PHONE_MIN_DIGITS)
 		return `Введите номер: только цифры, минимум ${PHONE_MIN_DIGITS}`
-	if (digits.length > PHONE_MAX_DIGITS) return `Не более ${PHONE_MAX_DIGITS} цифр`
+	if (digits.length > PHONE_MAX_DIGITS)
+		return `Не более ${PHONE_MAX_DIGITS} цифр`
 	return null
 }
 
@@ -33,6 +43,7 @@ function validateMessage(value: string): string | null {
 }
 
 const Form = () => {
+	const [company, setCompany] = useState('')
 	const [name, setName] = useState('')
 	const [phone, setPhone] = useState('')
 	const [message, setMessage] = useState('')
@@ -42,6 +53,7 @@ const Form = () => {
 	>('idle')
 	const [errorText, setErrorText] = useState('')
 	const [fieldErrors, setFieldErrors] = useState<{
+		company?: string
 		name?: string
 		phone?: string
 		message?: string
@@ -53,21 +65,24 @@ const Form = () => {
 		const digits = v.replace(/\D/g, '')
 		if (digits.length > PHONE_MAX_DIGITS) return
 		setPhone(v)
-		if (fieldErrors.phone) setFieldErrors((prev) => ({ ...prev, phone: undefined }))
+		if (fieldErrors.phone)
+			setFieldErrors(prev => ({ ...prev, phone: undefined }))
 	}
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault()
 		setErrorText('')
+		const companyErr = validateCompany(company)
 		const nameErr = validateName(name)
 		const phoneErr = validatePhone(phone)
 		const messageErr = validateMessage(message)
 		setFieldErrors({
+			company: companyErr ?? undefined,
 			name: nameErr ?? undefined,
 			phone: phoneErr ?? undefined,
 			message: messageErr ?? undefined,
 		})
-		if (nameErr || phoneErr || messageErr) return
+		if (companyErr || nameErr || phoneErr || messageErr) return
 
 		setStatus('sending')
 		try {
@@ -75,6 +90,7 @@ const Form = () => {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
+					company: company.trim(),
 					name: name.trim(),
 					phone: phone.trim(),
 					message: message.trim(),
@@ -89,6 +105,7 @@ const Form = () => {
 				return
 			}
 			setStatus('success')
+			setCompany('')
 			setName('')
 			setPhone('')
 			setMessage('')
@@ -120,16 +137,40 @@ const Form = () => {
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<div className={styles.formGroup}>
 						<input
+							className={`${styles.formInput} ${fieldErrors.company ? styles.formInputError : ''}`}
+							type='text'
+							id='company'
+							name='company'
+							placeholder='Компания*'
+							value={company}
+							onChange={e => {
+								setCompany(e.target.value)
+								if (fieldErrors.company)
+									setFieldErrors(prev => ({ ...prev, company: undefined }))
+							}}
+							required
+							minLength={NAME_MIN_LETTERS}
+							aria-invalid={!!fieldErrors.company}
+						/>
+						{fieldErrors.company && (
+							<p className={styles.fieldError} role='alert'>
+								{fieldErrors.company}
+							</p>
+						)}
+					</div>
+
+					<div className={styles.formGroup}>
+						<input
 							className={`${styles.formInput} ${fieldErrors.name ? styles.formInputError : ''}`}
 							type='text'
 							id='name'
 							name='name'
-							placeholder='Имя*'
+							placeholder='Контактное лицо*'
 							value={name}
-							onChange={(e) => {
+							onChange={e => {
 								setName(e.target.value)
 								if (fieldErrors.name)
-									setFieldErrors((prev) => ({ ...prev, name: undefined }))
+									setFieldErrors(prev => ({ ...prev, name: undefined }))
 							}}
 							required
 							minLength={NAME_MIN_LETTERS}
@@ -141,6 +182,7 @@ const Form = () => {
 							</p>
 						)}
 					</div>
+
 					<div className={styles.formGroup}>
 						<input
 							className={`${styles.formInput} ${fieldErrors.phone ? styles.formInputError : ''}`}
@@ -161,17 +203,34 @@ const Form = () => {
 							</p>
 						)}
 					</div>
+
+					<div className={styles.roleWrapper}>
+						<h3 className={styles.roleTitle}>Тип сотрудничества*</h3>
+						<div className={styles.roleInner}>
+							{ROLES.map(r => (
+								<button
+									key={r}
+									type='button'
+									className={`${styles.roleBtn} ${role === r ? styles.roleBtnActive : ''}`}
+									onClick={() => setRole(r)}
+								>
+									{r}
+								</button>
+							))}
+						</div>
+					</div>
+
 					<div className={styles.formGroup}>
 						<textarea
 							className={`${styles.formTextarea} ${styles.formInput} ${fieldErrors.message ? styles.formInputError : ''}`}
 							id='message'
 							name='message'
-							placeholder='Комментарий'
+							placeholder='Краткое описание задач'
 							value={message}
-							onChange={(e) => {
+							onChange={e => {
 								setMessage(e.target.value)
 								if (fieldErrors.message)
-									setFieldErrors((prev) => ({ ...prev, message: undefined }))
+									setFieldErrors(prev => ({ ...prev, message: undefined }))
 							}}
 							maxLength={MESSAGE_MAX_LENGTH}
 							aria-invalid={!!fieldErrors.message}
@@ -186,22 +245,6 @@ const Form = () => {
 								{message.length} / {MESSAGE_MAX_LENGTH}
 							</p>
 						)}
-					</div>
-
-					<div className={styles.roleWrapper}>
-						<h3 className={styles.roleTitle}>Кого представляет*</h3>
-						<div className={styles.roleInner}>
-							{ROLES.map((r) => (
-								<button
-									key={r}
-									type='button'
-									className={`${styles.roleBtn} ${role === r ? styles.roleBtnActive : ''}`}
-									onClick={() => setRole(r)}
-								>
-									{r}
-								</button>
-							))}
-						</div>
 					</div>
 
 					{errorText && (

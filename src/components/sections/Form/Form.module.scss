@@ -21,6 +21,7 @@
 	}
 
 	.form {
+		position: relative;
 		padding: 40px;
 		width: 100%;
 		max-width: 592px;
@@ -116,28 +117,38 @@
 	}
 
 	.statusSuccess {
-		text-align: center;
-		margin-top: 20px;
-		padding: 24px;
-	}
-
-	.iconWrapper {
-		margin-bottom: 12px;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 20px;
+		color: $gray;
+		border-radius: 20px;
+		padding: 40px;
+		backdrop-filter: blur(18px);
+		background: #d1d1d1;
 	}
 
 	.statusSuccessTitle {
-		font-family: $manrope;
-		font-weight: 600;
-		font-size: 18px;
-		color: #1f1f1f;
-		margin: 0 0 4px;
+		font-family: $benzin;
+		font-weight: 400;
+		font-size: 48px;
+		letter-spacing: 0.01em;
+		text-align: center;
+		color: $gray;
 	}
 
 	.statusSuccessText {
 		font-family: $manrope;
-		font-size: 14px;
-		color: rgba(31, 31, 31, 0.7);
-		margin: 0;
+		font-weight: 400;
+		font-size: 18px;
+		text-align: center;
+		color: $gray;
 	}
 
 	.agreementText {

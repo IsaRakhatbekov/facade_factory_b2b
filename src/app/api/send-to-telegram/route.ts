@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { setFormData } from './form-store'
 
 const TELEGRAM_API = 'https://api.telegram.org/bot'
 
@@ -13,7 +12,8 @@ function escapeHtml(text: string): string {
 export async function POST(request: NextRequest) {
 	try {
 		const body = await request.json()
-		const { name, phone, message, role, source } = body as {
+		const { company, name, phone, message, role, source } = body as {
+			company?: string
 			name?: string
 			phone?: string
 			message?: string
@@ -44,13 +44,15 @@ export async function POST(request: NextRequest) {
 			'',
 			'<i>Нажмите на значение, чтобы скопировать</i>',
 			'',
-			'<b>Имя:</b> <code>' + safe(name) + '</code>',
+			'<b>Компания:</b> <code>' + safe(company) + '</code>',
+			'',
+			'<b>Контактное лицо:</b> <code>' + safe(name) + '</code>',
 			'',
 			'<b>Телефон / WhatsApp:</b> <code>' + safe(phone) + '</code>',
 			'',
-			'<b>Комментарий:</b> <code>' + safe(message) + '</code>',
+			'<b>Тип сотрудничества:</b> <code>' + safe(role) + '</code>',
 			'',
-			'<b>Кого представляет:</b> <code>' + safe(role) + '</code>',
+			'<b>Краткое описание задач:</b> <code>' + safe(message) + '</code>',
 		].join('\n')
 
 		const url = `${TELEGRAM_API}${botToken}/sendMessage`
@@ -61,17 +63,10 @@ export async function POST(request: NextRequest) {
 				chat_id: chatId.includes('-') ? chatId : Number(chatId),
 				text,
 				parse_mode: 'HTML',
-				reply_markup: {
-					inline_keyboard: [
-						[{ text: '📋 Скопировать всё', callback_data: 'copyall' }],
-					],
-				},
 			}),
 		})
 
 		const data = (await res.json().catch(() => ({}))) as {
-			ok?: boolean
-			result?: { message_id?: number }
 			description?: string
 		}
 		if (!res.ok) {
@@ -79,16 +74,6 @@ export async function POST(request: NextRequest) {
 				{ error: data.description || 'Ошибка Telegram API' },
 				{ status: res.status }
 			)
-		}
-		const messageId = data.result?.message_id
-		if (messageId != null) {
-			setFormData(chatId, messageId, {
-				name: String(name ?? '').trim(),
-				phone: String(phone ?? '').trim(),
-				message: String(message ?? '').trim(),
-				role: String(role ?? '').trim(),
-				source: sourceNorm,
-			})
 		}
 
 		return NextResponse.json({ ok: true })
