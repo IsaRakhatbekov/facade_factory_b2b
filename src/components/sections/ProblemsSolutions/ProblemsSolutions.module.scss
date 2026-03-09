@@ -13,9 +13,34 @@
 		border-radius: 50px;
 		margin-bottom: 100px;
 
-		.title {
-			color: $gray;
+		.titleWrapper {
 			margin-bottom: 80px;
+		}
+
+		.title,
+		.titleSubtitle {
+			color: $gray;
+		}
+
+		.titleInner {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.titleSubtitle {
+			max-width: 60%;
+			flex-shrink: 0;
+		}
+
+		.titleLine {
+			flex-shrink: 1;
+			display: inline-block;
+			width: 100%;
+			max-width: 40%;
+			height: 10px;
+			border-radius: 30px;
+			background: rgba(31, 31, 31, 0.6);
 		}
 
 		.list {
@@ -169,10 +194,6 @@
 	.ProblemsSolutions {
 		.Problems {
 			padding: 40px 20px;
-
-			.title {
-				margin-bottom: 60px;
-			}
 		}
 
 		.Solutions {
@@ -204,10 +225,10 @@
 
 		.Problems {
 			margin-bottom: 80px;
-			.title {
+
+			.titleWrapper {
 				margin-bottom: 40px;
 			}
-
 			.list {
 				gap: 20px;
 			}
@@ -226,12 +247,27 @@
 		.Problems {
 			border-radius: 16px;
 
+			.titleWrapper {
+				margin-bottom: 20px;
+			}
+
+			.titleLine {
+				display: none;
+			}
+
+			.titleSubtitle {
+				max-width: 100%;
+			}
+
 			.list {
 				grid-template-columns: repeat(1, 1fr);
 			}
 		}
 
 		.Solutions {
+			.title {
+				margin-bottom: 20px;
+			}
 			.content {
 				max-width: 100%;
 			}

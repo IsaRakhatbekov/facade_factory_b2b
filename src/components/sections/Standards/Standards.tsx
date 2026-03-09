@@ -30,7 +30,10 @@ const Standards = () => {
 						<h3 className={styles.innerTitle}>Спецификации</h3>
 					</li>
 					<li className={styles.item}>
-						<h3 className={styles.innerTitle}>Каталоги цветов RAL / NCS</h3>
+						<h3 className={styles.innerTitle}>
+							Каталоги цветов <br />
+							RAL / NCS
+						</h3>
 					</li>
 				</ul>
 

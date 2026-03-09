@@ -7,9 +7,17 @@ const ProblemsSolutions = () => {
 		<section id='about' className={styles.ProblemsSolutions}>
 			<div className={`${styles.container} container`}>
 				<div className={styles.Problems}>
-					<h2 className={`${styles.title} def-title`}>
-						Мы знаем, с какими проблемами вы сталкиваетесь
-					</h2>
+					<div className={styles.titleWrapper}>
+						<h2 className={`${styles.title} def-title`}>
+							Мы знаем, с какими проблемами
+						</h2>
+						<div className={styles.titleInner}>
+							<h2 className={`${styles.titleSubtitle} def-title`}>
+								вы сталкиваетесь
+							</h2>
+							<div className={styles.titleLine}></div>
+						</div>
+					</div>
 					<ul className={styles.list}>
 						<li className={styles.item}>
 							<div className={styles.icon}>

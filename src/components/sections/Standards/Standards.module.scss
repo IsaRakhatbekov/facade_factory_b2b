@@ -74,7 +74,7 @@
 
 	.imgWrapper {
 		border-radius: 20px;
-		aspect-ratio: 1216 / 177;
+		aspect-ratio: 1216 / 664;
 		overflow: hidden;
 
 		& img {
@@ -97,6 +97,10 @@
 
 		.list {
 			gap: 20px;
+		}
+
+		.imgWrapper {
+			aspect-ratio: 688 / 396;
 		}
 	}
 }
@@ -135,7 +139,7 @@
 
 		.imgWrapper {
 			border-radius: 20px;
-			aspect-ratio: 343 / 77;
+			aspect-ratio: 343 / 202;
 		}
 	}
 }
