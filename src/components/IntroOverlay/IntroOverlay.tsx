@@ -20,13 +20,13 @@ export default function IntroOverlay() {
 					ФАБРИКА <br /> ФАСАДОВ
 				</p>
 				<div className={styles.buttons}>
-					<button
-						type='button'
+					<a
+						href='https://b2c.fasady.kg/'
 						className={`${styles.btn} ${styles.btnFirst}`}
-						onClick={handleEnter}
+						target='_self'
 					>
 						Я — мебельное производство
-					</button>
+					</a>
 					<button
 						type='button'
 						className={`${styles.btn} ${styles.btnSecond}`}
