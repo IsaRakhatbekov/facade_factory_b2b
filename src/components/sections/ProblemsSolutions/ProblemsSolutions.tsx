@@ -178,7 +178,7 @@ const ProblemsSolutions = () => {
 										</svg>
 									</div>
 									<div className={styles.textWrapper}>
-										<h3>Повторя-емость</h3>
+										<h3>Повторяемость</h3>
 										<p>Одинаковая фрезеровка и цвет от заказа к заказу</p>
 									</div>
 								</div>
