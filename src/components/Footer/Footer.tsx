@@ -40,7 +40,13 @@ const Footer = () => {
 					<div className={styles.contactsWrapper}>
 						<h3 className={styles.contactsTitle}>Свяжитесь с нами</h3>
 						<div className={styles.socLinksWrapper}>
-							<a className={styles.socLink} href='#'>
+							<a
+								className={styles.socLink}
+								href='https://wa.me/996557000755'
+								target='_blank'
+								rel='noopener noreferrer'
+								aria-label='WhatsApp'
+							>
 								<svg
 									width='25'
 									height='25'
@@ -54,7 +60,13 @@ const Footer = () => {
 									/>
 								</svg>
 							</a>
-							<a className={styles.socLink} href='#'>
+							<a
+								className={styles.socLink}
+								href='https://t.me/+996557000755'
+								target='_blank'
+								rel='noopener noreferrer'
+								aria-label='Telegram'
+							>
 								<svg
 									width='28'
 									height='25'
@@ -73,13 +85,13 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className={styles.addressWrapper}>
-						<a href='tel:+996557000755'>Телефон: 996 557 000 755</a>
+						<a href='tel:+996557000755'>Телефон: 0557000755</a>
 						<a href=''>
 							<span className={styles.addressDesktop}>
-								Адрес: Город Бишкек, Улица Интергельпо, 4
+								Адрес: Город Бишкек, Интергельпо 1/15
 							</span>
 							<span className={styles.addressMobile}>
-								Адрес: Город Бишкек, Улица Интергельпо, 4
+								Адрес: Город Бишкек, Интергельпо 1/15
 							</span>
 						</a>
 					</div>
