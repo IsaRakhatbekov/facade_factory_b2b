@@ -7,17 +7,18 @@ const ProblemsSolutions = () => {
 		<section id='about' className={styles.ProblemsSolutions}>
 			<div className={`${styles.container} container`}>
 				<div className={styles.Problems}>
-					<div className={styles.titleWrapper}>
-						<h2 className={`${styles.title} def-title`}>
+					{/* Одна фраза = один заголовок: разбивка на два h2 ломала иерархию. */}
+					<h2 className={styles.titleWrapper}>
+						<span className={`${styles.title} def-title`}>
 							Мы знаем, с какими проблемами
-						</h2>
-						<div className={styles.titleInner}>
-							<h2 className={`${styles.titleSubtitle} def-title`}>
+						</span>
+						<span className={styles.titleInner}>
+							<span className={`${styles.titleSubtitle} def-title`}>
 								вы сталкиваетесь
-							</h2>
-							<div className={styles.titleLine}></div>
-						</div>
-					</div>
+							</span>
+							<span className={styles.titleLine}></span>
+						</span>
+					</h2>
 					<ul className={styles.list}>
 						<li className={styles.item}>
 							<div className={styles.icon}>
@@ -158,7 +159,10 @@ const ProblemsSolutions = () => {
 					</h2>
 					<div className={styles.wrapper}>
 						<div className={styles.imgWrapper}>
-							<Image src={solutionsImg} alt='Solutions' />
+							<Image
+								src={solutionsImg}
+								alt='Контроль качества на производстве мебельных фасадов'
+							/>
 						</div>
 						<ul className={styles.content}>
 							<li className={styles.item}>

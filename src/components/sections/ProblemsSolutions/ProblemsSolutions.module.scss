@@ -20,6 +20,8 @@
 		.title,
 		.titleSubtitle {
 			color: $gray;
+			// Заголовок собран из span-ов внутри одного h2 — возвращаем блочность.
+			display: block;
 		}
 
 		.titleInner {

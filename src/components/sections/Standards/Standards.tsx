@@ -38,7 +38,10 @@ const Standards = () => {
 				</ul>
 
 				<div className={styles.imgWrapper}>
-					<Image src={StandardsImg} alt='Standards' />
+					<Image
+						src={StandardsImg}
+						alt='Подбор цвета фасадов по каталогам RAL и NCS'
+					/>
 				</div>
 			</div>
 		</section>

@@ -38,7 +38,10 @@ const Designers = () => {
 						</li>
 					</ul>
 					<div className={styles.imgWrapper}>
-						<Image src={DesignersImg} alt='Industries' />
+						<Image
+							src={DesignersImg}
+							alt='Фасады с эксклюзивной фрезеровкой по проектам дизайнеров и архитекторов'
+						/>
 					</div>
 				</div>
 

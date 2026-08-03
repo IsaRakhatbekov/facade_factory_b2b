@@ -36,7 +36,10 @@ const Industries = () => {
 						</li>
 					</ul>
 					<div className={styles.imgWrapper}>
-						<Image src={IndustriesImg} alt='Industries' />
+						<Image
+							src={IndustriesImg}
+							alt='Серийное производство мебельных фасадов для мебельных фабрик'
+						/>
 					</div>
 				</div>
 				<a href='#form' className={styles.btn}>

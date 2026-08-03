@@ -1,5 +1,6 @@
 import logo from '@/public/images/logo.svg'
 import Image from 'next/image'
+import { CONTACTS, MAP_URL } from '@/src/lib/seo'
 import styles from './Footer.module.scss'
 
 const Footer = () => {
@@ -85,13 +86,15 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className={styles.addressWrapper}>
-						<a href='tel:+996557000755'>Телефон: 0557000755</a>
-						<a href=''>
+						<a href={`tel:${CONTACTS.phone}`}>
+							Телефон: {CONTACTS.phoneDisplay}
+						</a>
+						<a href={MAP_URL} target='_blank' rel='noopener noreferrer'>
 							<span className={styles.addressDesktop}>
-								Адрес: Город Бишкек, Интергельпо 1/15
+								Адрес: Город {CONTACTS.city}, {CONTACTS.street}
 							</span>
 							<span className={styles.addressMobile}>
-								Адрес: Город Бишкек, Интергельпо 1/15
+								Адрес: Город {CONTACTS.city}, {CONTACTS.street}
 							</span>
 						</a>
 					</div>

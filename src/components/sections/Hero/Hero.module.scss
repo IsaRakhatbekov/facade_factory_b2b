@@ -1,7 +1,8 @@
 @use '../../../styles/variables' as *;
 .Hero {
 	padding: 160px 0 140px;
-	background: url('../../../../public/images/heroBg.webp') no-repeat top/cover;
+	// Путь из /public, а не бандл — чтобы preload в layout.tsx попадал в тот же URL.
+	background: url('/images/heroBg.webp') no-repeat top/cover;
 	background-attachment: fixed;
 
 	.title {
