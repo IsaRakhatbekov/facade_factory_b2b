@@ -66,7 +66,8 @@ export const metadata: Metadata = {
 	// Коды подтверждения задаются переменными окружения в Vercel.
 	verification: {
 		google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-		yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+		yandex:
+			process.env.NEXT_PUBLIC_YANDEX_VERIFICATION ?? 'dc884fc2a5231c00',
 	},
 }
 
